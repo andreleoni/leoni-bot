@@ -4,8 +4,8 @@ require 'rack/test'
 require 'ffaker'
 # require "pg_search"
 
-Dir["./spec/support/**/*.rb"].each { |f| require f }
-Dir["./app/services/**/*.rb"].each {|file| require file }
+Dir["./spec/support/**/*.rb"].each { |file| require file }
+Dir["./app/services/**/*.rb"].each { |file| require file }
 
 set :environment, :test
 
