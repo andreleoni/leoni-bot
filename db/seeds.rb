@@ -1,1 +1,2 @@
-Company.create name: 'OneBitBot'
+Company.create name: 'MySupport'
+Company.create name: 'EUAX'
