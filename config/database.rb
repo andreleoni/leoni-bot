@@ -21,7 +21,7 @@ configure :development do
 end
 
 configure :production do
-  db = URI.parse(ENV['DATABASE_URL'] || 'postgres:///postgres/onebitbot_production')
+  db = URI.parse(ENV['DATABASE_URL'] || 'postgres:///postgres/no-ponto_production')
 
   set :database, {
    adapter:  db.scheme == 'postgres' ? 'postgresql' : db.scheme,
