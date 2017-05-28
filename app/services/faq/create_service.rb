@@ -9,12 +9,12 @@ module FaqModule
     end
 
     def call
-      # return "Hashtag Obrigatória" if @hashtags.blank?
+      return "Hashtag Obrigatória" if @hashtags.blank?
 
       begin
         Faq.transaction do
           faq = Faq.create(question: @question, answer: @answer, company: @company)
-            
+
           @hashtags.split(/[\s,]+/).each do |hashtag|
             faq.hashtags << Hashtag.create(name: hashtag)
           end
