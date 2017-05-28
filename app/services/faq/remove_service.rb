@@ -4,13 +4,13 @@ module FaqModule
       # TODO: identify origin and set company
       @company = Company.last
       @params = params
-      @id = params["id"]
+      @id = params["id-original"]
     end
 
     def call
       faq = @company.faqs.where(id: @id).last
       return "Questão inválida, verifique o Id" if faq == nil
-      
+
       Faq.transaction do
         faq.hashtags.each do |h|
           if h.faqs.count <= 1
@@ -18,7 +18,7 @@ module FaqModule
           end
         end
         faq.delete
-        
+
         "Deletado com sucesso"
       end
     end
