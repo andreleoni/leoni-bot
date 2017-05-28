@@ -13,7 +13,7 @@ services:
     ports:
       - '9292:9292'
     volumes:
-      - '.:/leoni-bot'
+      - '.:/my-support-bot'
     environment:
       - LANG=C.UTF-8
 

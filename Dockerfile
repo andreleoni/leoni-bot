@@ -3,7 +3,7 @@ FROM ruby:2.3-slim
 RUN apt-get update && apt-get install -qq -y --no-install-recommends \
       build-essential libpq-dev
 
-ENV INSTALL_PATH /leoni-bot
+ENV INSTALL_PATH /my-support-bot
 RUN mkdir -p $INSTALL_PATH
 WORKDIR $INSTALL_PATH
 
