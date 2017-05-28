@@ -6,7 +6,7 @@ module FaqModule
     end
 
     def call
-      hashtags = Hashtag.where(company: @company.id)
+      hashtags = Hashtag.where(company_id: @company.id)
       return "Nenhum hashtag encontrado para este time!! :(" if hashtags.size < 1
 
       response = "*Hashtags e número de perguntas desta tag* \n\n"
