@@ -6,7 +6,9 @@ module FaqModule
     end
 
     def call
+
       hashtags = @company.hashtags
+      raise hashtags.inspect
       # return "Nenhum hashtag encontrado para este time!! :(" if hashtags.size < 1
 
       response = "*Hashtags e número de perguntas desta tag* \n\n"
