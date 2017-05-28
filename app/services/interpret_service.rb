@@ -4,7 +4,9 @@ class InterpretService
     when "list", "search", "search_by_hashtag"
       FaqModule::ListService.new(params, action).call()
     when "list_hashtags"
-      FaqModule::ListHashtagsService.new(params).call()
+      HashtagModule::ListHashtagsService.new(params).call()
+    when "remove_faqs_by_hashtag"
+      HashtagModule::RemoveFaqsByHashtagService.new(params).call()
     when "create"
       FaqModule::CreateService.new(params).call()
     when "remove"

@@ -15,7 +15,7 @@ module FaqModule
       Faq.transaction do
           faq = Faq.create!(question: @question, answer: @answer, company: @company)
           @hashtags.split(/[\s,]+/).each do |hashtag|
-            faq.hashtags << Hashtag.create!(name: hashtag)
+            faq.hashtags << Hashtag.find_or_create_by!(name: hashtag, company_id: @company.id)
           end
         end
 
