@@ -3,6 +3,8 @@ class InterpretService
     case action
     when "list", "search", "search_by_hashtag"
       FaqModule::ListService.new(params, action).call()
+    when "list_hashtags"
+      FaqModule::ListHashtagsService.new(params).call()
     when "create"
       FaqModule::CreateService.new(params).call()
     when "remove"
