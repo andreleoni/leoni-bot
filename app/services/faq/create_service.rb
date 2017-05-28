@@ -9,7 +9,7 @@ module FaqModule
     end
 
     def call
-      return @hashtags if @hashtags.blank?
+      return "Hashtag Obrigatória" if @hashtags.blank?
 
       begin
         Faq.transaction do
